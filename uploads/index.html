@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Site</title>
+</head>
+<body>
+    <h1>Test Vulnerable Site</h1>
+
+    <form method="GET">
+        <label>Search:</label>
+        <input type="text" name="q" placeholder="Type something...">
+        <button type="submit">Search</button>
+    </form>
+
+    <p>You searched for: 
+        <b>
+        <script>
+            const url = new URL(window.location.href);
+            document.write(url.searchParams.get("q"));
+        </script>
+        </b>
+    </p>
+</body>
+</html>
